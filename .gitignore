@@ -1,0 +1,20 @@
+# Environment variables
+.env
+
+# Ignore other files
+llms/embedding_models/all-mpnet-base-v2/model.safetensors
+.idea/
+
+
+# Ignore vector database
+./data/vector_db/
+
+
+# Byte-compiled / cache files
+__pycache__/
+*.pyc
+
+
+# Ignore safetensors model files
+*.safetensors
+llms/embedding_models/

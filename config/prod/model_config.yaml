@@ -1,0 +1,21 @@
+inference_models:
+
+  - provider: nvidia
+    name: google/gemma-2-9b-it
+    address: https://integrate.api.nvidia.com/v1
+    temperature: 0.3
+    max_tokens: 4096
+
+
+
+  - provider: groq
+    name: google/gemma-2-9b-it
+    address: https://api.groq.com/openai/v1
+    temperature: 0.3
+    max_tokens: 1024
+
+
+
+
+
+
