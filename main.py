@@ -32,6 +32,17 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
+#Check Nvidia Key is available
+
+
+if( os.getenv('NVIDIA_CLOUD_MODEL_API_KEY')
+):
+  Nvidia_key = os.getenv('NVIDIA_CLOUD_MODEL_API_KEY')
+    
+else:
+     print("NVIDIA Key not avaliable..")
+
+
 
 
 
