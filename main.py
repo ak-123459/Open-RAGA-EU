@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-from langserve import add_routes
 from app.assistant import ChatManagerRunnable,ChatManager
 from llms.model_manager import ModelManager
 from retrieval.vector_store import get_vector_store
