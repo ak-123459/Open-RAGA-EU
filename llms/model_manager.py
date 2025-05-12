@@ -1,11 +1,11 @@
 import yaml
-from langchain_community.llms.ollama import Ollama
 import os
 from pathlib import Path
 import yaml
 from langchain_core.language_models import BaseChatModel
 from langchain_nvidia_ai_endpoints import ChatNVIDIA
-from openai import api_key, base_url
+
+
 
 # Root directory files path
 root_path = os.path.dirname(os.path.abspath(__file__))
