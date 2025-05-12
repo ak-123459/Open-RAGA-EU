@@ -154,7 +154,8 @@ def create_embeddings(docs_path= chat_path,vectorstore_path=vectorstore_path):
             return vectorstore
            
        else:       
-                   print(f"documents not exist in directory :- {docs_path}")
+                   
+                   print(f"documents does not exist in directory :- {docs_path}")
            
                    return None
 
