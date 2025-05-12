@@ -53,7 +53,7 @@ start_time = time.perf_counter()  # Start timer
 
 # Get LLM instance
 llm = model_manager.get_model(name='google/gemma-2-9b-it', provider='nvidia',
-                              key=os.getenv('NVIDIA_CLOUD_MODEL_API_KEY'))
+                              key=Nvidia_key)
 
 
 elapsed = (time.perf_counter() - start_time) * 1000
