@@ -72,6 +72,7 @@ importlib_metadata==8.7.0
 intel-openmp==2021.4.0
 ipykernel==6.17.1
 ipyleaflet==0.19.2
+pdfplumber==0.11.6
 ipyparallel==8.8.0
 ipython==7.34.0
 ipython-genutils==0.2.0
