@@ -138,7 +138,7 @@ def create_embeddings(docs_path= chat_path,vectorstore_path=vectorstore_path):
 
        if(os.path.exists(docs_path)):
 
-            print("Creating embeddings ..."")
+            print("Creating embeddings ...\n")
             # Split into chunks
             text_splitter = CharacterTextSplitter(chunk_size=chunk_size
                                                   , chunk_overlap=chunk_overlap)
@@ -154,7 +154,7 @@ def create_embeddings(docs_path= chat_path,vectorstore_path=vectorstore_path):
             return vectorstore
            
        else:       
-                   print(f"douments not exist in directory :- {docs_path}")
+                   print(f"documents not exist in directory :- {docs_path}")
            
                    return None
 
