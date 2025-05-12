@@ -8,6 +8,16 @@ import os
 # Load environment variables
 load_dotenv()
 
+
+
+if( os.getenv('URL')
+):
+  URL = os.getenv('URL')
+    
+else:
+     print("URL not avaliable in environment variables..")
+        
+
 # Function to make post request
 def get_reponse(prompt:str,messages:list,url:str):
 
@@ -108,7 +118,7 @@ if prompt := st.chat_input("Write message..?"):
 
 
     # Get the response
-    response = get_reponse(prompt.strip(), st.session_state.history[-6:], os.getenv("URL")+"/chat")
+    response = get_reponse(prompt.strip(), st.session_state.history[-6:], URL+"/chat")
 
 
     if (response):
