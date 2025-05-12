@@ -137,13 +137,14 @@ def append_embeddings(docs_path= chat_path,vectorstore_path=vectorstore_path):
 def create_embeddings(docs_path= chat_path,vectorstore_path=vectorstore_path):
 
        if(os.path.exists(docs_path)):
-               
+
+            print("Creating embeddings ..."")
             # Split into chunks
             text_splitter = CharacterTextSplitter(chunk_size=chunk_size
                                                   , chunk_overlap=chunk_overlap)
         
             docs = text_splitter.create_documents(get_file_contents(docs_path))  
-        
+            
             vectorstore  = FAISS.from_documents(docs, get_embedding_model())
      
             vectorstore.save_local(vectorstore_path)
@@ -152,7 +153,9 @@ def create_embeddings(docs_path= chat_path,vectorstore_path=vectorstore_path):
 
             return vectorstore
            
-       else:
+       else:       
+                   print(f"douments not exist in directory :- {docs_path}")
+           
                    return None
 
 
