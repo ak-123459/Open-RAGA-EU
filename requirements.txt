@@ -167,6 +167,7 @@ pdfminer.six==20250327
 pdfplumber==0.11.6
 pickleshare==0.7.5
 pillow==10.4.0
+python-magic
 platformdirs==4.3.7
 playwright==1.48.0
 prettytable==3.16.0
