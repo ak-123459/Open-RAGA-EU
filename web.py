@@ -1,7 +1,12 @@
 import streamlit as st
 import requests
 import json
+from dotenv import load_dotenv
+import os
 
+
+# Load environment variables
+load_dotenv()
 
 # Function to make post request
 def get_reponse(prompt:str,messages:list,url:str):
@@ -103,7 +108,7 @@ if prompt := st.chat_input("Write message..?"):
 
 
     # Get the response
-    response = get_reponse(prompt.strip(), st.session_state.history[-6:], "http://127.0.0.1:8000/chat")
+    response = get_reponse(prompt.strip(), st.session_state.history[-6:], os.getenv("URL")+"/chat")
 
 
     if (response):
