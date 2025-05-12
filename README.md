@@ -143,7 +143,7 @@ In toady tech world generative artificial intelligence(GenAi) has many applicati
 - `Cloud computing(Runpod or Google cloud etc.)`
 - `git , github`
 - `Software development`
-- `Programming(Python javascript etc.)`
+- `Programming(Python , javascript etc.)`
 - `Large language models`
 - `Langchain`
 - `Hugging Face`
@@ -155,7 +155,10 @@ In toady tech world generative artificial intelligence(GenAi) has many applicati
 - Nvidia RTX GPU Minimum 16 GB ram or cpu(***Note:-*** using of cpu may slow computation and model inferences use gpu for better performance.
 
 ### Libraries:-
-- All required libraries included in above requirements.txt files,can be downloaded in your project environments by running command ```pip install -r requirements.txt``` 
+- All required libraries included in above requirements.txt files,can be downloaded in your project environments by running command ```pip install -r requirements.txt```
+
+### Python.
+  `Python version 3.10.11`
 
   
 </div>
@@ -164,6 +167,20 @@ In toady tech world generative artificial intelligence(GenAi) has many applicati
 
 
 ***
+
+<div align= "start">
+ 
+&nbsp; &nbsp; <a href="https://imgbb.com/"><img src="🚀" alt="rocket" width="50" border="0"></a>
+
+</div>
+
+- ## **Installation**
+
+### Linux:-
+
+
+
+
 
 
 
