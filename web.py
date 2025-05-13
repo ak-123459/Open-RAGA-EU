@@ -8,19 +8,18 @@ import os
 # Load environment variables
 load_dotenv()
 
+# get url endpoint
+URL = os.getenv('URL')
 
-
-if( os.getenv('URL')
-):
-  URL = os.getenv('URL')
+if not URL:
+  
+  print("URL is empty in environment variable")
+  
     
-else:
-     print("URL not avaliable in environment variables..")
-        
+
 
 # Function to make post request
 def get_reponse(prompt:str,messages:list,url:str):
-
 
 
     payload = {'query': prompt.strip(), 'last_3_turn': messages}
