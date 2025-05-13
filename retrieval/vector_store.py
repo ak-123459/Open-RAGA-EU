@@ -37,7 +37,7 @@ def get_vector_store(vector_db_path=vector_db):
             
             return vector_store
 
-       else:
+        else:
 
             print(f"No Index file exist in path {vector_db_path}")
 
