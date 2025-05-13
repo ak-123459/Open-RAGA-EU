@@ -30,15 +30,29 @@ docs_path  = app_config['docs_path']['preprocessed']
 def get_vector_store(vector_db_path=vector_db):
     
   if(os.path.exists(vector_db_path)):
-      
-    vector_store =  FAISS.load_local(vector_db_path,get_embedding_model() ,allow_dangerous_deserialization=True)
 
-    return vector_store
+        if os.listdir(vector_db_path):
+            
+            vector_store =  FAISS.load_local(vector_db_path,get_embedding_model() ,allow_dangerous_deserialization=True)
+            
+            return vector_store
+
+       else:
+
+            print(f"No Index file exist in path {vector_db_path}")
+
+    
 
   else:
+        
+        os.makedirs(vector_db_path,exist_ok=True) # make database directory
 
-        os.makedirs(vector_db_path,exist_ok=True)
+        create_embeddings(docs_path,vector_db_path)
 
-        return create_embeddings(docs_path,vector_db)
+        vector_store =  FAISS.load_local(vector_db_path,get_embedding_model() ,allow_dangerous_deserialization=True)
+            
+        return vector_store
+        
+         
 
 
