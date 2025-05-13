@@ -54,23 +54,10 @@ chat_path  = app_config['docs_path']['chat_history']
 
 
 
-# get embeddings model
+# load huggingface embeddings model from disk
 
-def download_embedding_model():
-   pass
+def load_embeddings_model():
     
-
-"""This get_embedding_model load the embedding model if exist on local files else it will download  from source and return the embedding model."""
-
-# Get embeddings model
-
-def get_embedding_model(model_path=model_path):
-
-
-  # Check if specify path of embedding model exist if true then directly load the embedding model.
-
-  if(os.path.exists(model_path)):
-
       print("Loading embedding model..")
 
 
@@ -82,21 +69,38 @@ def get_embedding_model(model_path=model_path):
 
       print(f"Embedding Model loaded Successfully at {model_path}..")
 
-      return  embedding_model
+      return embedding_model
+
+
+    
+
+"""This get_embedding_model load the embedding model if exist on local files else it will download  from source and return the embedding model."""
+
+# Get embeddings model
+
+def get_embedding_model(model_path=model_path):
+
+  # Check if specify path of embedding model exist if true then directly load the embedding model.
+
+  if(os.path.exists(model_path)):
+
+
+      return  load_embeddings_model()
 
   # Download the model from Huggingface if it's not available offline.
   else:
 
-      os.makedirs(model_path,exist_ok=True)
-      # make directory for embedding model
+      os.makedirs(model_path,exist_ok=True)  # make directory for embedding model
+       
       print("Downloading embedding model..")
+      
       embedding_model = SentenceTransformer(model_name)       # get model from sources
 
-      embedding_model.save(model_path) # save the embedd. model 
+      embedding_model.save(model_path)   # save the embedd. model 
       
       print(f"Embedding Model downloaded Successfully at {model_path}..")
       
-      return  embedding_model # return model for inferences
+      return   load_embeddings_model()  # return model for inferences
 
      
      
@@ -144,14 +148,23 @@ def create_embeddings(docs_path= chat_path,vectorstore_path=vectorstore_path):
                                                   , chunk_overlap=chunk_overlap)
         
             docs = text_splitter.create_documents(get_file_contents(docs_path))  
-            
-            vectorstore  = FAISS.from_documents(docs, get_embedding_model())
-     
-            vectorstore.save_local(vectorstore_path)
+           
+            try:
+                vectorstore  = FAISS.from_documents(docs, get_embedding_model())
+                 
+                vectorstore.save_local(vectorstore_path)
+    
+                print(f"Vector created successfully in {vectorstore_path}:- ")
 
-            print(f"Vector created successfully in {vectorstore_path}:- ")
+                return vectorstore
 
-            return vectorstore
+            except Exception as e:
+                
+                     print(f"Something went wrong: {e}")
+                
+                     return None
+
+           
            
        else:       
                    
