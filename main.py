@@ -20,6 +20,14 @@ logger = logging.getLogger("uvicorn")
 # load .env files
 load_dotenv()
 
+# Nvidia api key
+Nvidia_key = os.getenv('NVIDIA_CLOUD_MODEL_API_KEY')
+
+if not Nvidia_key:
+    
+   print("Nvidia Key is not found in environment variable")
+    
+    
 # Initialise fast api app
 app = FastAPI()
 
@@ -32,16 +40,6 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
-#Check Nvidia Key is available
-
-
-if( os.getenv('NVIDIA_CLOUD_MODEL_API_KEY')
-):
-  Nvidia_key = os.getenv('NVIDIA_CLOUD_MODEL_API_KEY')
-    
-else:
-     print("NVIDIA Key not avaliable..")
-
 
 
 
@@ -51,18 +49,25 @@ model_manager = ModelManager()
 
 start_time = time.perf_counter()  # Start timer
 
-# Get LLM instance
-llm = model_manager.get_model(name='google/gemma-2-9b-it', provider='nvidia',
-                              key=Nvidia_key)
+try :
+        
+    # Get LLM instance
+    llm = model_manager.get_model(name='google/gemma-2-9b-it', provider='nvidia',
+                                  key=Nvidia_key)
+ 
+    elapsed = (time.perf_counter() - start_time) * 1000
+    
+    logger.info(f"⚡ Latency (llm initialization): {elapsed:.2f} ms")
 
-
-elapsed = (time.perf_counter() - start_time) * 1000
-
-logger.info(f"⚡ Latency (llm initialization): {elapsed:.2f} ms")
+except Exception as e:
+    
+    print(f" something went wrong  {e}")
+    
 
 start_time = time.perf_counter()  # Start timer
 
-vector_db = get_vector_store()
+
+vector_db = get_vector_store() # get vector database
 
 elapsed = (time.perf_counter() - start_time) * 1000
 logger.info(f"⚡ Latency (vector initialization): {elapsed:.2f} ms")
