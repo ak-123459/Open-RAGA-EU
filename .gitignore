@@ -2,7 +2,6 @@
 .env
 
 # Ignore other files
-llms/embedding_models/all-mpnet-base-v2/model.safetensors
 .idea/
 
 
@@ -15,6 +14,12 @@ __pycache__/
 *.pyc
 
 
-# Ignore safetensors model files
-*.safetensors
-llms/embedding_models/
+
+# Ignore embedding model files
+./src/embedder/model_checkpoints/
+
+
+#Ignore docs files
+./data/preprocessed/
+
+

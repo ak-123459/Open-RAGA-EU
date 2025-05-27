@@ -26,6 +26,7 @@ extension_func_map = {
   
 }
 
+
 mime_func_map = {
     "application/pdf": "read_pdf",
     "application/msword": "read_doc",

@@ -1,7 +1,5 @@
 from fastapi import FastAPI
 from app.assistant import ChatManagerRunnable,ChatManager
-from llms.model_manager import ModelManager
-from retrieval.vector_store import get_vector_store
 from app.models.schemas import ChatInput,ChatOutput
 from fastapi import HTTPException
 from typing import Optional
@@ -13,21 +11,102 @@ import traceback
 import uvicorn
 import time
 from fastapi.middleware.cors import CORSMiddleware
+import argparse
+import json
+from src.llm.llm_factory import CHATLLMFactory
+from src.embedder.embedder_factory import EMBFactory
+from src.vector_database.vector_db_factory import VECTORDBFactory
+import os
 
+
+
+
+
+# Add logging for uvicorn
 logger = logging.getLogger("uvicorn")
 
 
 # load .env files
 load_dotenv()
 
-# Nvidia api key
-Nvidia_key = os.getenv('NVIDIA_CLOUD_MODEL_API_KEY')
 
-if not Nvidia_key:
-    
-   print("Nvidia Key is not found in environment variable")
-    
-    
+# Nvidia api key
+NVIDIA_NVC_API_KEY = os.getenv('NVIDIA_CLOUD_MODEL_API_KEY')
+
+
+
+# Initialize parser
+parser = argparse.ArgumentParser(description="Retrieval Augmentation Generation Chat-Assistant args")
+
+# Add arguments
+parser.add_argument("--embedder-args",type=str, required=True)
+
+
+parser.add_argument("--embedder-type",type=str, required=True)
+
+
+parser.add_argument("--llm-type",type=str, required=True)
+
+
+# Add arguments
+parser.add_argument("--llm-args",type=str, required=True)
+
+# Add arguments
+parser.add_argument("--db-args",type=str, required=True)
+
+
+parser.add_argument("--db-type",type=str, required=True)
+
+
+# parse arguments
+args = parser.parse_args()
+
+try:
+
+    chat_llm_args = json.loads(args.llm_args)
+    embedder_args = json.loads(args.embedder_args)
+    db_args  = json.loads(args.db_args)
+
+    chat_llm_args['model_name'] = "google/gemma-2-9b-it"
+    chat_llm_args['temperature'] = 0.3
+    chat_llm_args['max_tokens'] = 4096
+    chat_llm_args['api_key'] = NVIDIA_NVC_API_KEY
+
+
+    embedder_args['model_name'] = "sentence-transformers/all-mpnet-base-v2"
+    embedder_args['model_path'] = "./src/embedder/model_checkpoints/"
+    embedder_args['model_kwargs'] = { "device": "cpu"}
+    embedder_args['encode_kwargs'] = {"normalize_embeddings": True}
+
+
+    db_args.vector_store_path = "./data/vector_db/knowledge_base/"
+    db_args.chunk_size = 1200
+    db_args.chunk_overlap = 300
+    db_args.allow_dangerous_deserialization = True
+    db_args.output_ = True
+    db_args.docs_path = "./data/vector_db/preprocessed/"
+
+
+
+except json.JSONDecodeError as e:
+        print(f"Error parsing JSON arguments: {e}")
+
+
+
+
+llm_pipe = CHATLLMFactory.create_chat_model_pipeline(args.llm_type,chat_llm_args)
+
+embedder_pipe =  EMBFactory.create_embedder_model_pipeline(args.embedder_args,embedder_args)
+
+# Pass the embeddings model ...
+
+embedder_args['embedding_model']  = embedder_pipe.load_model()
+
+vector_db_pipe = VECTORDBFactory.create_vector_db_pipeline(args.db_type,db_args)
+
+
+
+
 # Initialise fast api app
 app = FastAPI()
 
@@ -44,16 +123,15 @@ app.add_middleware(
 
 
 
-# Create Instance of Model manger
-model_manager = ModelManager()
 
 start_time = time.perf_counter()  # Start timer
+
+
 
 try :
         
     # Get LLM instance
-    llm = model_manager.get_model(name='google/gemma-2-9b-it', provider='nvidia',
-                                  key=Nvidia_key)
+    llm =  llm_pipe.load_model()
  
     elapsed = (time.perf_counter() - start_time) * 1000
     
@@ -66,14 +144,15 @@ except Exception as e:
 
 start_time = time.perf_counter()  # Start timer
 
-
-vector_db = get_vector_store() # get vector database
+# Get vector database
+vector_db = vector_db_pipe.load_faiss_db()
 
 elapsed = (time.perf_counter() - start_time) * 1000
 logger.info(f"⚡ Latency (vector initialization): {elapsed:.2f} ms")
 
 # Create instance of chat manger
 manager = ChatManager(llm, vector_db.as_retriever())
+
 
 
 
