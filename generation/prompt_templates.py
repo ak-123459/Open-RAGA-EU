@@ -15,16 +15,6 @@ with open(root_path+"/prompt_templates.yaml", "r",encoding="utf-8") as file:
 
 
 
-# Load a .yaml or .yml file
-with open(Path(root_path).parent/"config/dev/app_config.yaml", "r",encoding="utf-8") as file:
-    classes = yaml.safe_load(file)
-
-
-
-functions = ", ".join(classes['functions'])
-top_label_intent = ", ".join(classes['top_label_intent'])
-intent_mode = ", ".join(classes['intent_mode'])
-
 
 
 
