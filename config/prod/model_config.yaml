@@ -17,7 +17,7 @@ db_args:
   
 
 embedder_args:
-  type: huggingaface
+  type: huggingface
   model_name: sentence-transformers/all-mpnet-base-v2
   model_kwargs:
     device: cpu
