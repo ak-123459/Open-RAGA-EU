@@ -119,12 +119,3 @@ class ChatManager:
 
 
 
-
-
-# class to wrap ChatManger with langchain runnable
-class ChatManagerRunnable(Runnable):
-    def __init__(self, chat_manager):
-        self.chat_manager = chat_manager
-
-    def invoke(self, input: str, config: RunnableConfig | None = None, **kwargs: Any) -> Any:
-        return self.chat_manager.run(input)
