@@ -84,7 +84,7 @@ async def on_startup():
         manager = ChatManager(llm, vector_db.as_retriever())
 
         # Vector DB test
-        _ = vector_db.as_retriever().invoke("startup test")
+        _ = await vector_db.as_retriever().invoke("startup test")
 
         logger.info("✅ All components initialized successfully.")
 

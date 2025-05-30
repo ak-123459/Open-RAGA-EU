@@ -6,15 +6,13 @@ chat_llm_args:
   
    
 db_args:
-  type:faiss
+  type: faiss
   vector_store_path: "./data/vector_db/knowledge_base/"
   chunk_size: "./data/vector_db/knowledge_base/"
   chunk_overlap: true
-  output_path:
+  output_path: ""
   docs_path: "./data/vector_db/preprocessed/"
 
-
-  
 
 embedder_args:
   type: huggingface

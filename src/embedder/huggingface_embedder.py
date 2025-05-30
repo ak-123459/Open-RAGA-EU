@@ -15,8 +15,7 @@ logging.basicConfig(level=logging.INFO)
 
 class Huggingface_embedders(EMBInterface):
 
-
-    def __init__(self,**kwargs):
+  def __init__(self,**kwargs):
 
         self.model_name = kwargs.get("model_name")
         self.model_path = kwargs.get("model_path")
@@ -24,9 +23,7 @@ class Huggingface_embedders(EMBInterface):
         self.encode_kwargs = kwargs.get("encode_kwargs")
 
 
-
-
-    def load_model(self)->HuggingFaceEmbeddings|SentenceTransformer:
+  async def load_model(self)->HuggingFaceEmbeddings|SentenceTransformer:
 
          if os.path.exists(self.model_path):
 
