@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.assistant import ChatManagerRunnable,ChatManager
+from app.assistant import ChatManager
 from app.models.schemas import ChatInput,ChatOutput
 from fastapi import HTTPException
 from typing import Optional
