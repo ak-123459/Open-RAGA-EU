@@ -20,89 +20,53 @@ import os
 
 
 
+# load .env files
+load_dotenv()
 
 
 # Add logging for uvicorn
 logger = logging.getLogger("uvicorn")
 
 
-# load .env files
-load_dotenv()
-
-
 # Nvidia api key
 NVIDIA_NVC_API_KEY = os.getenv('NVIDIA_CLOUD_MODEL_API_KEY')
 
 
-
-# Initialize parser
-parser = argparse.ArgumentParser(description="Retrieval Augmentation Generation Chat-Assistant args")
-
-# Add arguments
-parser.add_argument("--embedder-args",type=str, required=True)
+# function to load model config files...
+def load_config(path="./config/prod/model_config.yaml"):
+    with open(path, "r") as f:
+        return yaml.safe_load(f)
 
 
-parser.add_argument("--embedder-type",type=str, required=True)
 
-
-parser.add_argument("--llm-type",type=str, required=True)
-
-
-# Add arguments
-parser.add_argument("--llm-args",type=str, required=True)
-
-# Add arguments
-parser.add_argument("--db-args",type=str, required=True)
-
-
-parser.add_argument("--db-type",type=str, required=True)
-
-
-# parse arguments
-args = parser.parse_args()
 
 try:
 
-    chat_llm_args = json.loads(args.llm_args)
-    embedder_args = json.loads(args.embedder_args)
-    db_args  = json.loads(args.db_args)
-
-    chat_llm_args['model_name'] = "google/gemma-2-9b-it"
-    chat_llm_args['temperature'] = 0.3
-    chat_llm_args['max_tokens'] = 4096
-    chat_llm_args['api_key'] = NVIDIA_NVC_API_KEY
-
-
-    embedder_args['model_name'] = "sentence-transformers/all-mpnet-base-v2"
-    embedder_args['model_path'] = "./src/embedder/model_checkpoints/"
-    embedder_args['model_kwargs'] = { "device": "cpu"}
-    embedder_args['encode_kwargs'] = {"normalize_embeddings": True}
-
-
-    db_args.vector_store_path = "./data/vector_db/knowledge_base/"
-    db_args.chunk_size = 1200
-    db_args.chunk_overlap = 300
-    db_args.allow_dangerous_deserialization = True
-    db_args.output_ = True
-    db_args.docs_path = "./data/vector_db/preprocessed/"
-
-
-
-except json.JSONDecodeError as e:
-        print(f"Error parsing JSON arguments: {e}")
+    model_config =   load_config()
+    
+    chat_llm_args = model_config['chat_llm_args']
+    db_args = model_config['db_args']
+    embedder_args = model_config['embedder_args']
 
 
 
 
-llm_pipe = CHATLLMFactory.create_chat_model_pipeline(args.llm_type,chat_llm_args)
+except Exception as e:
+    
+        print(f"Error in : {e}")
 
-embedder_pipe =  EMBFactory.create_embedder_model_pipeline(args.embedder_args,embedder_args)
+
+
+
+llm_pipe = CHATLLMFactory.create_chat_model_pipeline(chat_llm_args['type'],chat_llm_args)
+
+embedder_pipe =  EMBFactory.create_embedder_model_pipeline(embedder_args['type'],embedder_args)
 
 # Pass the embeddings model ...
 
 embedder_args['embedding_model']  = embedder_pipe.load_model()
 
-vector_db_pipe = VECTORDBFactory.create_vector_db_pipeline(args.db_type,db_args)
+vector_db_pipe = VECTORDBFactory.create_vector_db_pipeline(db_args['type'],db_args)
 
 
 
