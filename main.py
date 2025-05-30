@@ -17,7 +17,7 @@ from src.llm.llm_factory import CHATLLMFactory
 from src.embedder.embedder_factory import EMBFactory
 from src.vector_database.vector_db_factory import VECTORDBFactory
 import os
-
+import asyncio
 
 
 # load .env files
@@ -64,7 +64,7 @@ embedder_pipe =  EMBFactory.create_embedder_model_pipeline(embedder_args['type']
 
 # Pass the embeddings model ...
 
-embedder_args['embedding_model']  = embedder_pipe.load_model()
+embedder_args['embedding_model']  = asyncio.run(embedder_pipe.load_model())
 
 vector_db_pipe = VECTORDBFactory.create_vector_db_pipeline(db_args['type'],**db_args)
 
@@ -95,7 +95,7 @@ start_time = time.perf_counter()  # Start timer
 try :
         
     # Get LLM instance
-    llm =  llm_pipe.load_model()
+    llm =  asyncio.run(llm_pipe.load_model())
  
     elapsed = (time.perf_counter() - start_time) * 1000
     
@@ -109,7 +109,7 @@ except Exception as e:
 start_time = time.perf_counter()  # Start timer
 
 # Get vector database
-vector_db = vector_db_pipe.load_faiss_db()
+vector_db = asyncio.run(vector_db_pipe.load_faiss_db())
 
 elapsed = (time.perf_counter() - start_time) * 1000
 logger.info(f"⚡ Latency (vector initialization): {elapsed:.2f} ms")
