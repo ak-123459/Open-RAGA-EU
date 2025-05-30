@@ -28,7 +28,7 @@ class Faiss_db:
         self.docs_path = kwargs.get("docs_path")
 
 
-  async  def load_faiss_db(self):
+   async  def load_faiss_db(self):
 
         if(os.path.exists(self.vector_store_path)):
 
@@ -48,7 +48,7 @@ class Faiss_db:
 
 
 # Create vector Embeddings datastore
-  async  def create_vector_embeddings(self,docs_path,output_index_path):
+   async  def create_vector_embeddings(self,docs_path,output_index_path):
 
 
         # Split into chunks
