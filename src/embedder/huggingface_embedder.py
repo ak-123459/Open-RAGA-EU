@@ -1,7 +1,7 @@
 import os.path
 from langchain_huggingface.embeddings import HuggingFaceEmbeddings
 from sentence_transformers import SentenceTransformer
-from embedding_interface import EMBInterface
+from .embedding_interface import EMBInterface
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 import logging
