@@ -16,9 +16,7 @@ logging.basicConfig(level=logging.INFO)
 # Class to load Faiss(Facebook AI similarity search)
 
 class Faiss_db:
-
     def __init__(self,**kwargs):
-
         self.vector_store_path = kwargs.get("vector_store_path")
         self.embedding_model =  kwargs.get("embedding_model")
         self.chunk_size  =  kwargs.get("chunk_size")
@@ -29,19 +27,16 @@ class Faiss_db:
 
 
    async  def load_faiss_db(self):
-
         if(os.path.exists(self.vector_store_path)):
-
             vector_db =   FAISS.load_local(folder_path = self.vector_store_path,index_name=self.index_name ,embeddings=self.embedding_model, allow_dangerous_deserialization=self.allow_dangerous_deserialization)
+            return vector_db
             logging.info("database loaded successfully..")
 
         else:
-
               await self.create_vector_embeddings(docs_path=self.docs_path,output_index_path=self.vector_store_path)
               vector_db = FAISS.load_local(folder_path=self.vector_store_path, index_name=self.index_name,
                                            embeddings=self.embedding_model,
                                            allow_dangerous_deserialization=self.allow_dangerous_deserialization)
-
               return vector_db
 
 
