@@ -29,7 +29,7 @@ vector_db = None
 manager = None
 
 # Nvidia API key
-NVIDIA_NVC_API_KEY = os.getenv('NVIDIA_CLOUD_MODEL_API_KEY')
+NVIDIA_NVC_API_KEY = os.getenv('NVIDIA_LLM_API')
 
 
 # Load config
@@ -61,6 +61,7 @@ async def on_startup():
         # Load model config
         model_config = load_config()
         chat_llm_args = model_config['chat_llm_args']
+        chat_llm_args['api_key'] = NVIDIA_NVC_API_KEY
         db_args = model_config['db_args']
         embedder_args = model_config['embedder_args']
 
