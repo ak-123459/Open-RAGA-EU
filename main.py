@@ -58,15 +58,15 @@ except Exception as e:
 
 
 
-llm_pipe = CHATLLMFactory.create_chat_model_pipeline(chat_llm_args['type'],chat_llm_args)
+llm_pipe = CHATLLMFactory.create_chat_model_pipeline(chat_llm_args['type'],**chat_llm_args)
 
-embedder_pipe =  EMBFactory.create_embedder_model_pipeline(embedder_args['type'],embedder_args)
+embedder_pipe =  EMBFactory.create_embedder_model_pipeline(embedder_args['type'],**embedder_args)
 
 # Pass the embeddings model ...
 
 embedder_args['embedding_model']  = embedder_pipe.load_model()
 
-vector_db_pipe = VECTORDBFactory.create_vector_db_pipeline(db_args['type'],db_args)
+vector_db_pipe = VECTORDBFactory.create_vector_db_pipeline(db_args['type'],**db_args)
 
 
 
