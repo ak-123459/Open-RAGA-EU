@@ -32,7 +32,7 @@ responses more accurate and generate more contextual responses .By applying
 3. [Model](#Model)
 4. [Prerequisites](#Prerequisites)
 5. [Project Structure](#Project-Structure)
-6. [Installation & Project Setup](#Installation & Project Setup)
+6. (Installation & Project Setup)[#Installation & Project Setup]
 7. [Methodology](#Methodlogy)
 8. [Limitations](#Limitations)
 9. [Conclusion](#Conclusion)
@@ -183,9 +183,9 @@ In toady tech world generative artificial intelligence(GenAi) has many applicati
 ***FOLLOW THE BELOW LINKS***
 
 
-(WINDOWS 10)[https://www.geeksforgeeks.org/download-and-install-python-3-latest-version/#install-python-on-windows-10]
+[WINDOWS 10](https://www.geeksforgeeks.org/download-and-install-python-3-latest-version/#install-python-on-windows-10)
 
-(LINUX)[https://www.geeksforgeeks.org/download-and-install-python-3-latest-version/#install-python-on-linux]
+[LINUX](https://www.geeksforgeeks.org/download-and-install-python-3-latest-version/#install-python-on-linux)
 
 
 
