@@ -55,7 +55,7 @@ responses more accurate and generate more contextual responses .By applying
  
 - ## **Project Overview**
 
-In toady tech world generative artificial intelligence(GenAi) has many applications in different domains Every company wants to integrate ai models on production.why because after revolutionary development of large language models(LLMs) many real world and complex problems are solving.these large language models actually trained on large text , images data and using the attention mechanism they can understand pattern that make them more powerful.So in this projects we combined the natural language processing capabilities of LLM with the RAG(retrieval augmented generations) and [prompt engineering](https://www.ibm.com/think/topics/prompt-engineering) to build a real world chatbot application.
+In toady tech world generative artificial intelligence(GenAI) has many applications in different domains Every company wants to integrate ai models on production.why because after revolutionary development of large language models(LLMs) many real world and complex problems are solving.these large language models actually trained on large text , images data and using the attention mechanism they can understand pattern that make them more powerful.So in this projects we combined the natural language processing capabilities of LLM with the RAG(retrieval augmented generations) and [prompt engineering](https://www.ibm.com/think/topics/prompt-engineering) to build a real world chatbot application.
   
 
  <div/>
@@ -139,9 +139,9 @@ In toady tech world generative artificial intelligence(GenAi) has many applicati
 - `Machine learning`
 - `Deep Learning(Tensorflow,pytorch)`
 - `Vector databases(FAISS,ChromaDB etc.)`
-- Ollama (for hosting llm locally)
+- An text generation LLM(Large language model)
 - `Cloud computing(Runpod or Google cloud etc.)`
-- `git , github`
+- `git,github`
 - `Software development`
 - `Programming(Python , javascript etc.)`
 - `Large language models`
@@ -227,3 +227,12 @@ Open new terminal window and test app by running command..
 
 
 
+
+
+
+ 
+
+
+
+
+  
