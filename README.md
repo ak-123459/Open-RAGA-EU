@@ -218,7 +218,7 @@ Run app using uvivorn
 
 Open new terminal window and test app by running command..
 
-`curl  http://localhost:8000``
+``curl  http://localhost:8000``
 
 🖕🖕 above command will return response:-
 {"health":"ok"}
