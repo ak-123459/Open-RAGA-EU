@@ -32,7 +32,7 @@ responses more accurate and generate more contextual responses .By applying
 3. [Model](#Model)
 4. [Prerequisites](#Prerequisites)
 5. [Project Structure](#Project-Structure)
-6. [Installation & Project Setup](#Installation & Project Setup)
+6. [Installation & Project Setup](#Installation&Project_Setup)
 7. [Methodology](#Methodlogy)
 8. [Limitations](#Limitations)
 9. [Conclusion](#Conclusion)
