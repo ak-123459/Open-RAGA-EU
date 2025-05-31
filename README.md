@@ -158,7 +158,7 @@ In toady tech world generative artificial intelligence(GenAi) has many applicati
 - All required libraries included in above requirements.txt files,can be downloaded in your project environments by running command ```pip install -r requirements.txt```
 
 ### Python.
-  `Python version 3.10.11`
+  `Python version >= 3.10 <=3.12 `
 
   
 </div>
