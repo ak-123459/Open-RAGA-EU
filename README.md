@@ -180,7 +180,7 @@ In toady tech world generative artificial intelligence(GenAi) has many applicati
 **Python Installations(If not installed**
 
 
-***FOLLOW THE BELOW LINKS***
+***⬇️FOLLOW THE BELOW LINKS⬇️***
 
 
 [WINDOWS 10](https://www.geeksforgeeks.org/download-and-install-python-3-latest-version/#install-python-on-windows-10)
