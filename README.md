@@ -215,6 +215,8 @@ Installed necessary packages
 Run app using uvivorn
 ``uvicorn main:app --reload``
 
+**Note:-** if there any error on app run rerun the above 🖕 command..
+
 
 Open new terminal window and test app by running command..
 
