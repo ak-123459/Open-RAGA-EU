@@ -110,9 +110,9 @@ In toady tech world generative artificial intelligence(GenAI) has many applicati
 
 
  - ## **Model**
-- [gemma-1b-it](https://huggingface.co/google/gemma-3-1b-it) instructions tuned large language model.
+- [gemma-7b-it](https://huggingface.co/google/gemma-3-1b-it) instructions tuned text generation large language model.
   
-**Note:-** any instructions base large language models can be used.we recommend google/gemma-3-27b-it (for large scale projects).
+**Note:-** any instructions tuned text generations large language model .for more accurate reaponse we recommend google/gemma-3-27b-it.
   
 
 
