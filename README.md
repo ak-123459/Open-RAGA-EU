@@ -32,7 +32,7 @@ responses more accurate and generate more contextual responses .By applying
 3. [Model](#Model)
 4. [Prerequisites](#Prerequisites)
 5. [Project Structure](#Project-Structure)
-6. [Installation](#Installation)
+6. [Installation & Project Setup](#Installation & Project Setup)
 7. [Methodology](#Methodlogy)
 8. [Limitations](#Limitations)
 9. [Conclusion](#Conclusion)
@@ -174,11 +174,54 @@ In toady tech world generative artificial intelligence(GenAi) has many applicati
 
 </div>
 
-- ## **Installation**
+- ## **Installation & Project Setup**
+  
+  
+**Python Installations(If not installed**
+
+
+***FOLLOW THE BELOW LINKS***
+
+
+(WINDOWS 10)[https://www.geeksforgeeks.org/download-and-install-python-3-latest-version/#install-python-on-windows-10]
+
+(LINUX)[https://www.geeksforgeeks.org/download-and-install-python-3-latest-version/#install-python-on-linux]
+
+
+
+
+
+**Clone the repo.**
+
+  ``git clone https://github.com/ak-123459/Open-RAGA.git
+cd Open-RAGA
+  ``
+
+
 
 ### Linux:-
 
+**Create virtual environmemt**
 
+``pyhon -m venv OpenRaga
+source OpenRaga\bin\activate
+``
+
+Installed necessary packages
+
+``pip install -r requirements.txt``
+
+
+Run app using uvivorn
+``uvicorn main:app --reload``
+
+
+Open new terminal window and test app by running command..
+
+`curl  http://localhost:8000``
+
+🖕🖕 above command will return response:-
+{"health":"ok"}
 
 
 
