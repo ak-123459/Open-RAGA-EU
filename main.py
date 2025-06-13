@@ -38,6 +38,15 @@ def load_config(path="./config/prod/model_config.yaml"):
         return yaml.safe_load(f)
 
 
+# Load config
+def load_config(path="./config/dev/app_config.yaml"):
+    with open(path, "r") as f:
+        return yaml.safe_load(f)
+
+
+
+
+
 # FastAPI app initialization
 app = FastAPI()
 
