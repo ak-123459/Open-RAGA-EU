@@ -89,7 +89,7 @@ class Faiss_db:
    
      context = []
      vector_store = await self.load_faiss_db()
-     res =  vector_store.similarity_search(query,k=2) 
+     results =  vector_store.similarity_search(query,k=2) 
 
      for res in results:
        context.append(res.page_content)                   
