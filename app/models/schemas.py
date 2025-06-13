@@ -45,7 +45,7 @@ class ChatOutput(BaseModel):
 
         if not isinstance(values.get('response'),str) or not values.get('response').strip():
 
-            raise ValueError("query must be a non-empty string")
+            raise ValueError("response must be a non-empty string")
 
         return  values
 
@@ -77,14 +77,14 @@ class SimilaritySearchInput(BaseModel):
 
 class SimilaritySearchOutput(BaseModel):
 
-    response: str
+    response: list
 
     @model_validator(mode='before')
     def check_response(cls, values):
 
-        if not isinstance(values.get('response'),str) or not values.get('response').strip():
+        if not isinstance(values.get('response'),list) or not values.get('response').strip():
 
-            raise ValueError("query must be a non-empty string")
+            raise ValueError("response must be a list")
 
         return  values
 
