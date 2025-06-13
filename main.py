@@ -138,7 +138,10 @@ async def get_response(request: ChatInput):
 @app.post("/similarity_search", response_model=SimilaritySearchOutput)
 async def get_similar_docs(request:SimilaritySearchInput):
           
-    return await vector_db_pipe.similarity_search(request.query)
+    response = await vector_db_pipe.similarity_search(request.query)
+    
+    return {'response': response}
+
       
 
 
