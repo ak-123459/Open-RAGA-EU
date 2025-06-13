@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from app.assistant import ChatManager
-from app.models.schemas import ChatInput, ChatOutput
+from app.models.schemas import ChatInput, ChatOutput,SimilaritySearchInput,SimilaritySearchOutput
 from typing import Optional
 from dotenv import load_dotenv
 import os
@@ -135,9 +135,9 @@ async def get_response(request: ChatInput):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-@app.post("/chat", response_model=ChatOutput)
-async def get_similar_docs(request:):
-
+@app.post("/similarity_search", response_model=SimilaritySearchOutput)
+async def get_similar_docs(request:SimilaritySearchInput):
+          
     
 
 
