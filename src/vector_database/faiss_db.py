@@ -88,7 +88,7 @@ class Faiss_db:
   async  def similarity_search(self,query):
    
      vector_store = await self.load_faiss_db()
-     return await vector_store.similarity_search(query,k=2)
+     return  vector_store.similarity_search(query,k=2)
 
 
 
