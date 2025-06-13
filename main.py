@@ -39,7 +39,7 @@ def load_config(path="./config/prod/model_config.yaml"):
 
 
 # Load config
-def load_config(path="./config/dev/app_config.yaml"):
+def load_app_config(path="./config/dev/app_config.yaml"):
     with open(path, "r") as f:
         return yaml.safe_load(f)
 
@@ -69,10 +69,15 @@ async def on_startup():
 
         # Load model config
         model_config = load_config()
+        # Load app config
+        app_config = load_app_config()
+        
         chat_llm_args = model_config['chat_llm_args']
         chat_llm_args['api_key'] = NVIDIA_NVC_API_KEY
         db_args = model_config['db_args']
         embedder_args = model_config['embedder_args']
+        
+        
 
         # Create pipelines
         llm_pipe = CHATLLMFactory.create_chat_model_pipeline(chat_llm_args['type'], **chat_llm_args)
