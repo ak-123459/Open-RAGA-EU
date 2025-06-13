@@ -1,7 +1,7 @@
 # === Vector Store Settings ===
 vector_store:
   type: "faiss"           
-  persist_path: "./data/vector_db/knowlege_base/"
+  persist_path: "./data/vector_db/knowledge_base/"
   index_name: "knowledge_base"
   top_k: 1
  
