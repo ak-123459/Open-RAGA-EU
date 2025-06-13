@@ -28,7 +28,7 @@ with open(Path(root_path).parent/"generation/prompt_templates.yaml", "r",encodin
 translate_prompt_Temp = get_template('translator')['translator']
 history_aware_prompt = prompt_config['context_aware_prompt']['prompt']
 details_agent_prompt = prompt_config['details_agent_prompt']['prompt']
-
+translate_to_hindi = get_template('translator_english_hindi')['translator_english_hindi']
 # Chat manager class to manage chat
 class ChatManager:
     
@@ -105,17 +105,11 @@ class ChatManager:
 
 
 
-
-        # self.last_k_chat.save_context({'inputs': translated_text}, {'outputs': result['answer']})
-
-
-        # # Regex pattern to remove only the prefix
-        # pattern = r'^(assistant:|bot:|ai:|answer:)\s*'  # match only the prefix and optional space
-        #
-        # # Remove only the matched word (case-insensitive)
-        # cleaned_output = re.sub(pattern, '', result['answer'], flags=re.IGNORECASE | re.MULTILINE)
-
-        return result['answer']
+        translated = (
+                translate_to_hindi | self.llm
+        ).invoke({'query': result['answer']})
+        print("----translated---",translated.content.strip())
+        return  translated.content.strip()
 
 
 

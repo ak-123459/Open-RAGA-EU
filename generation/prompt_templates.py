@@ -49,6 +49,11 @@ def get_template(name="main_prompt") -> dict:
 
            return {"main_agent_prompt":PromptTemplate.from_template(prompt_config['main_agent_prompt']['prompt'])}
 
+    elif name=="translator_english_hindi":
+
+           return {"translator_english_hindi":PromptTemplate.from_template(prompt_config['translator_english_hindi']['prompt'])}
    
+
+
     else:    raise ValueError(f"Unknown template: {name}")
 
