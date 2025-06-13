@@ -56,7 +56,7 @@ class SimilaritySearchInput(BaseModel):
 
     query:str
     
-     @model_validator(mode='wrap')
+    @model_validator(mode='wrap')
     def validate_chat_input(cls, values, handler):
         # This calls the default validation (e.g., type conversion)
         validated = handler(values)
