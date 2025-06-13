@@ -152,8 +152,7 @@ About           : Dr. Nidhi Asati currently serves as the Dean of the School of 
 School of Engineering Head's Profile
 
 
-Name
-Dr. Prashant Sen
+Name  : Dr. Prashant Sen
 
 Designation:
 Associate Professor and Head
@@ -181,8 +180,7 @@ Attached
 
 
 
-Name
-Dr. Shrihar Pandey
+Name  : Dr. Shrihar Pandey
 
 Designation:
 Associate Professor and Head
@@ -210,8 +208,7 @@ Attached
 
 
 
-Name
-Dr. R. D. Nirala
+Name  : Dr. R. D. Nirala
 
 Designation:
 Associate Professor & HOD
@@ -240,8 +237,7 @@ Attached
 
 
 
-Name
-Dr. Bhagyashree Naik
+Name   : Dr. Bhagyashree Naik
 
 Designation:
 Associate Professor and Head
@@ -273,8 +269,7 @@ School of Management and Commerce Dean's Profile
 
 
 
-Name
-Dr. Pearly Jacob
+Name  : Dr. Pearly Jacob
 
 Designation:
 Director IQAC and Dean
@@ -306,8 +301,7 @@ Attached
 School of Management Head's Profile
 
 
-Name
-Dr. Tanveer Khan
+Name : Dr. Tanveer Khan
 
 Designation:
 Assistant Professor and Head
@@ -337,8 +331,7 @@ Attached
 School of Management and Commerce Head's Profile
 
 
-Name
-Dr.Seema Badgaiyan
+Name  : Dr.Seema Badgaiyan
 
 Designation:
 Assistant Professor and Head
@@ -368,8 +361,7 @@ Attached
 School of Nursing and Paramedical Dean's Profile
 
 
-Name
-Dr. Vasantha Priya J.
+Name  : Dr. Vasantha Priya J.
 
 Designation
 Professor & Dean cum Principal
@@ -402,8 +394,7 @@ Attached
 School of Nursing and Paramedical Head's Profile
 
 
-Name
-Mrs. J. Geeta Kumari
+Name : Mrs. J. Geeta Kumari
 
 Designation
 Professor Cum Vice Principal
@@ -435,8 +426,7 @@ Attached
 School of Nursing and Paramedical Head's Profile
 
 
-Name
-Dr. Mahesh Patel
+Name : Dr. Mahesh Patel
 
 Designation
 Assistant Professor & Head
@@ -466,8 +456,7 @@ Attached
 School of Pharmacy Head's Profile
 
 
-Name
-Mrs. Imrozia Qureshi
+Name : Mrs. Imrozia Qureshi
 
 Designation
 Associate Professor & Head
@@ -500,8 +489,7 @@ School of Agriculture Dean's Profile
 
 
 
-Name
-Dr. Ompal Singh
+Name : Dr. Ompal Singh
 
 Designation:
 Associate Professor & Dean
@@ -534,8 +522,7 @@ Attached
 School of Agriculture Head's Profile
 
 
-Name
-Dr. Rajnish Kumar
+Name : Dr. Rajnish Kumar
 
 Designation:
 Assistant Professor & Head
@@ -571,8 +558,7 @@ Attached
 School of Basic & Applied Science Dean's Profile
 
 
-Name
-Dr. Nidhi Asati
+Name : Dr. Nidhi Asati
 
 Designation:
 Associate Professor & Dean
@@ -607,8 +593,7 @@ Attached
 School of Basic and Applied Science Head's Profile
 
 
-Name
-Dr. Shailendra Jain
+Name : Dr. Shailendra Jain
 
 Designation:
 Professor & Head
@@ -644,8 +629,7 @@ Attached
 School of Basic and Applied Science Head's Profile
 
 
-Name
-Dr. Shabnam Bee
+Name : Dr. Shabnam Bee
 
 Designation:
 Professor & Head
@@ -672,8 +656,7 @@ Resume
 Attached
 
 
-Name
-Dr. Abhishek Jain
+Name : Dr. Abhishek Jain
 
 Designation:
 Assistant Professor & Head
@@ -700,8 +683,7 @@ Resume
 Attached
 
 
-Name
-Dr. Gopi Sao
+Name : Dr. Gopi Sao
 
 Designation:
 Professor & Head
@@ -728,8 +710,7 @@ Resume
 Attached
 
 
-Name
-Dr. Asha Soni
+Name :- Dr. Asha Soni
 
 Designation:
 Associate Professor & Head
@@ -759,8 +740,7 @@ Attached
 School of Basic and Applied Science Head's Profile
 
 
-Name
-Dr. Arunika Gumasta
+Name : Dr. Arunika Gumasta
 
 Designation:
 Professor & Head
@@ -789,8 +769,7 @@ Attached
 School of Basic and Applied Science Head's Profile
 
 
-Name
-Mr. Amit Kumar Chourasia
+Name :- Mr. Amit Kumar Chourasia
 
 Designation
 Assistant Professor & Head
@@ -818,8 +797,7 @@ Attached
 School of Arts and Humanities Dean's Profile
 
 
-Name
-Prof. (Dr.) R.C. Jain
+Name :- Prof. (Dr.) R.C. Jain
 
 Designation
 Professor & Dean
@@ -849,8 +827,7 @@ Attached
 School of Arts and Humanities Head's Profile
 
 
-Name
-Dr. Ashish Kumar Jain
+Name :- Dr. Ashish Kumar Jain
 
 Designation:
 Assistant Professor & Head
@@ -877,8 +854,7 @@ Resume
 Attached
 
 
-Name
-Dr. Aashish Kumar Jain
+Name : Dr. Aashish Kumar Jain
 
 Designation:
 Associate Professor & Head
@@ -905,8 +881,7 @@ Resume
 Attached
 
 
-Name
-Dr. Abhishek Kumar Jain
+Name : Dr. Abhishek Kumar Jain
 
 Designation:
 Associate Professor & Head
@@ -941,8 +916,7 @@ Attached
 School of Arts and Humanities Head's Profile
 
 
-Name
-Prof. (Dr.) Usha Khandelwal
+Name : Prof. (Dr.) Usha Khandelwal
 
 Designation
 Professor & Head
@@ -969,8 +943,7 @@ Resume
 Attached
 
 
-Name
-Dr. Vijay Sahu
+Name : Dr. Vijay Sahu
 
 Designation
 Assistant Professor & Head
@@ -997,8 +970,7 @@ Resume
 Attached
 
 
-Name
-Dr. Pramila Kushwaha
+Name : Dr. Pramila Kushwaha
 
 Designation
 Associate Professor & Head
@@ -1025,8 +997,7 @@ Resume
 Attached
 
 
-Name
-Dr. Manisha Dixit
+Name : Dr. Manisha Dixit
 
 Designation
 Assistant Professor & Head
@@ -1053,8 +1024,7 @@ Resume
 Attached
 
 
-Name
-Dr. Durga Mahobia
+Name : Dr. Durga Mahobia
 
 Designation
 Assistant Professor & Head
@@ -1081,8 +1051,7 @@ Resume
 Attached
 
 
-Name
-Dr. Rajesh Sharma
+Name : Dr. Rajesh Sharma
 
 Designation
 Assistant Professor & Head
@@ -1112,8 +1081,7 @@ Attached
 School of Arts and Humanities Head's Profile
 
 
-Name
-Dr. Swati Gour
+Name : Dr. Swati Gour
 
 Designation:
 Assistant Professor & Head
@@ -1143,8 +1111,7 @@ Attached
 School of Education and Library Science - Dean's Profile
 
 
-Name
-Dr. Arti Tiwari
+Name : Dr. Arti Tiwari
 
 Designation
 Professor & Dean
@@ -1171,8 +1138,7 @@ Resume
 Attached
 
 
-Name
-Dr. Shobha Upadhyay
+Name : Dr. Shobha Upadhyay
 
 Designation:
 Associate Professor & Head
@@ -1228,8 +1194,7 @@ Attached
 
 
 
-Name
-Dr. Shriti Chouhan
+Name : Dr. Shriti Chouhan
 
 Designation
 Professor & Head
@@ -1262,8 +1227,7 @@ Attached
 School of Naturopathy and Yogic Science Dean's Profile
 
 
-Name
-Pro. (Dr.) Usha Khandelwal
+Name : Pro. (Dr.) Usha Khandelwal
 
 Designation
 Professor & Dean
@@ -1294,8 +1258,7 @@ Attached
 School of Naturopathy and Yogic Science Head's Profile
 
 
-Name
-Dr. Rachana Jain
+Name  : Dr. Rachana Jain
 
 Designation
 Professor & head
