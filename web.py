@@ -56,7 +56,7 @@ def ChatUI():
     
             st.markdown(
                 """
-                <h1 style='color: #1f77b4; font-size: 40px;'>
+                <h1 style='color: #1f77b4; font-size: 50px;'>
                     EVA <span style='font-size: 20px;'>Eklavya Virtual Assistant</span>
                 </h1>
                 """,
