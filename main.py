@@ -62,7 +62,7 @@ app.add_middleware(
 
 @app.on_event("startup")
 async def on_startup():
-    global llm, embedder_pipe, vector_db, manager
+    global llm, embedder_pipe, vector_db, manager,vector_db_pipe
 
     try:
         start_time = time.perf_counter()
