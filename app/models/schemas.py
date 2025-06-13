@@ -43,7 +43,7 @@ class ChatOutput(BaseModel):
     @model_validator(mode='before')
     def check_response(cls, values):
 
-        if not isinstance(values.get('response'),str) or not values.get('response').strip():
+        if not isinstance(values.get('response'),str) or not values.get('response'):
 
             raise ValueError("response must be a non-empty string")
 
