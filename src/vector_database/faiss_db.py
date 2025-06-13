@@ -84,3 +84,12 @@ class Faiss_db:
 
             logging.info(f"New docs added successfully in {self.vector_store_path}:- ")
 
+
+  async  def similarity_search(self,query):
+   
+     vector_store = await self.load_faiss_db()
+     return await vector_store.similaritySearch(query, 2)
+
+
+
+
